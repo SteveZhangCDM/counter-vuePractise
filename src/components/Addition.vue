@@ -2,7 +2,7 @@
   <div>
     <!-- this can be deleted -->
     <h3>Counter is: {{this.$store.state.count}}</h3>
-    <button>+1</button>
+    <button @click="btnHandler">+1</button>
   </div>
 </template>
 
@@ -10,6 +10,11 @@
 export default {
   data() {
     return {};
+  },
+  methods: {
+    btnHandler() {
+      this.$store.commit("add");
+    }
   }
 };
 </script>
