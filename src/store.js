@@ -21,5 +21,13 @@ export default new Vuex.Store({
             state.count -= n
         }
     },
-    action: {}
+    actions: {
+        addAsync(context) {
+            setTimeout(() => {
+                //在actions中， 不能直接修改state中的数据
+                //必须通过 context.commit() 触发某个 mutation 才行
+                context.commit("add")
+            }, 1000)
+        }
+    }
 })
