@@ -13,6 +13,12 @@ export default new Vuex.Store({
         },
         addN(state, n) {
             state.count += n
+        },
+        minus(state) {
+            state.count--;
+        },
+        minusN(state, n) {
+            state.count -= n
         }
     },
     action: {}
