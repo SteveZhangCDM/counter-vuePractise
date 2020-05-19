@@ -39,5 +39,10 @@ export default new Vuex.Store({
                 context.commit('minusN', n)
             }, 1000)
         }
+    },
+    getters: {
+        showNum(state) {
+            return 'current num is [' + state.count + ']'
+        }
     }
 })

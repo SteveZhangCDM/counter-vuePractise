@@ -2,6 +2,7 @@
   <div>
     <!-- this can be deleted -->
     <h3>Counter is: {{this.$store.state.count}}</h3>
+    <h3>{{$store.getters.showNum}}</h3>
     <button @click="btnHandler">+1</button>
     <button @click="btnHandlerN">+N</button>
     <button @click="btnHandlerAsync">+1 Async</button>

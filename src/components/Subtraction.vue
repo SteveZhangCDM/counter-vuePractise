@@ -1,6 +1,7 @@
 <template>
   <div>
     <h3>Counter is:{{count}}</h3>
+    <h3>{{showNum}}</h3>
     <button @click="btnHandler">-1</button>
     <button @click="btnHandlerN">-N</button>
     <button @click="minusAsync">-1 Async</button>
@@ -9,14 +10,15 @@
 </template>
 
 <script>
-import { mapState, mapMutations, mapActions } from "vuex";
+import { mapState, mapMutations, mapActions, mapGetters } from "vuex";
 
 export default {
   data() {
     return {};
   },
   computed: {
-    ...mapState(["count"])
+    ...mapState(["count"]),
+    ...mapGetters(["showNum"])
   },
   methods: {
     ...mapMutations(["minus"]),
