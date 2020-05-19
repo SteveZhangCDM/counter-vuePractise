@@ -3,11 +3,13 @@
     <h3>Counter is:{{count}}</h3>
     <button @click="btnHandler">-1</button>
     <button @click="btnHandlerN">-N</button>
+    <button @click="minusAsync">-1 Async</button>
+    <button @click="minusNAsync(5)">-N Async</button>
   </div>
 </template>
 
 <script>
-import { mapState, mapMutations } from "vuex";
+import { mapState, mapMutations, mapActions } from "vuex";
 
 export default {
   data() {
@@ -24,7 +26,8 @@ export default {
     },
     btnHandlerN() {
       this.minusN(3);
-    }
+    },
+    ...mapActions(["minusAsync", "minusNAsync"])
   }
 };
 </script>

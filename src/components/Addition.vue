@@ -22,7 +22,7 @@ export default {
     },
     //异步地址 count 自增 +1
     btnHandlerAsync() {
-      this.$store.dispatch("addAsync");
+      this.$store.dispatch("addAsync", 5);
     }
   }
 };

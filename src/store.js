@@ -22,11 +22,21 @@ export default new Vuex.Store({
         }
     },
     actions: {
-        addAsync(context) {
+        addAsync(context, n) {
             setTimeout(() => {
                 //在actions中， 不能直接修改state中的数据
                 //必须通过 context.commit() 触发某个 mutation 才行
-                context.commit("add")
+                context.commit("addN", n)
+            }, 1000)
+        },
+        minusAsync(context) {
+            setTimeout(() => {
+                context.commit('minus')
+            }, 1000)
+        },
+        minusNAsync(context, n) {
+            setTimeout(() => {
+                context.commit('minusN', n)
             }, 1000)
         }
     }
